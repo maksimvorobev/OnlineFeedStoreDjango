@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %} 
+
+
+{% block header %}
+
+{% include 'includes/header.html' %}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<section class="item">
+  <div class="container">
+    <div class="item__inner">
+      <a href="{{ request.META.HTTP_REFERER }}" class="item__back-link">Назад в каталог</a>
+      <h1 class="item__title">{{ product.name }}</h1>
+      <div class="item__desc">
+        <div class="item__img-inner">
+          {% if product.image_big %}
+          <img
+            src="{{ product.image_big.url }}"
+            alt="{{ product.name }}"
+            class="item__img"
+          />
+          {% else %}
+          <img
+          src="{% static "images/not-found-image.svg" %}"
+          alt="..."
+          class="item__img"
+          />
+          {% endif %}
+        </div>
+        <div class="item___desc-container">
+
+          {% if advantages_list %}
+          <ul class="item__desc-list">
+
+            {% for advantage in advantages_list %}
+            <li>{{ advantage }}</li>
+            {% endfor %}
+
+          </ul>
+          {% endif %}
+
+          <div class="item__desc-properties">
+            <div class="item__desc-property">
+              <p
+                class="item__desc-property-text item__desc-property-text_name"
+              >
+                <b>Название:</b> {{ product.name }}
+              </p>
+            </div>
+            {% if product.release_form %}
+            <div class="item__desc-property">
+              <p
+                class="item__desc-property-text item__desc-property-text_form"
+              >
+                <b>Форма выпуска:</b> {{ product.release_form }}
+              </p>
+            </div>
+            {% endif %}
+            {% if product.packing %}
+            <div class="item__desc-property">
+              <p
+                class="item__desc-property-text item__desc-property-text_pack"
+              >
+                <b>Упаковка:</b> {{ product.packing }}
+              </p>
+            </div>
+            {% endif %}
+            <div class="item__desc-property">
+              <p
+                class="item__desc-property-text item__desc-property-text_price"
+              >
+                <b>Цена, за кг:</b> {{ product.price }} <b>&#x20bd;</b>
+              </p>
+            </div>
+            <div class="item__desc-property">
+              <p
+                class="item__desc-property-text item__desc-property-text_quantity"
+              >
+                <b>Количество:</b> {{ product.quantity }}
+              </p>
+            </div>
+          </div>
+
+          <a class="item__desc-cart-btn add-to-cart" href="{% url "cart:cart_add" %}" data-product-id="{{ product.id }}">
+            {% csrf_token %}
+            Добавить в корзину
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="item-info">
+  <div class="container">
+    <p class="caption">ПОДРОБНАЯ ИНФОРМАЦИЯ</p>
+    <div class="tabs">
+      <div class="tabs__btn">
+        <button
+          class="tabs__btn-item tabs__btn-item_active"
+          data-button="content-1"
+        >
+          ПИТАТЕЛЬНОСТЬ
+        </button>
+        <button class="tabs__btn-item" data-button="content-2">
+          СОСТАВ
+        </button>
+        <button class="tabs__btn-item" data-button="content-3">
+          РЕКОМЕНДАЦИИ ПО КОРМЛЕНИЮ
+        </button>
+        <button class="tabs__btn-item" data-button="content-4">
+          ПРЕИМУЩЕСТВА
+        </button>
+      </div>
+      <div class="tabs__content">
+        <div
+          id="content-1"
+          class="tabs__content-item tabs__content-item_active"
+          >
+          <table class="table-properties">
+            <thead>
+              <tr>
+                <th>Основные показатели питательности</th>
+                <th>Пищевая ценность</th>
+                <th>Единицы</th>
+              </tr>
+            </thead>
+            {% if nutritional_info_list %}
+            <tbody>
+              {% for nutritional_info in nutritional_info_list %}
+              <tr>
+                {% for nutrition in nutritional_info %}
+                <td>{{ nutrition }}</td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </tbody>
+            {% endif %}
+          </table>
+        </div>
+
+        <div id="content-2" class="tabs__content-item">
+          <table class="table-properties table-properties_recommend">
+            <thead>
+              <tr>
+                <th>Компоненты корма</th>
+              </tr>
+            </thead>
+            {% if composition_list %}
+            <tbody>
+              {% for composition in composition_list %}
+              <tr>
+                <td>{{ composition }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+            {% endif %}
+          </table>
+        </div>
+
+        <div id="content-3" class="tabs__content-item">
+
+          {% if bmvd_product %}
+
+          <table class="table-properties table-properties_recommend">
+            <thead>
+              <tr>
+                <th colspan="2">Норма ввода в рацион</th>
+              </tr>
+            </thead>
+            {% if feeding_standards_list %}
+            <tbody>
+              {% for feeding_standard in feeding_standards_list %}
+              <tr>
+                {% for standard in feeding_standard %}
+                <td>{{ standard }}</td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </tbody>
+            {% endif %}
+          </table>
+          
+          {% else %}
+
+          <table class="table-properties table-properties_recommend">
+            <thead>
+              <tr>
+                <th>Нормы кормления</th>
+              </tr>
+            </thead>
+            {% if feeding_standards_list %}
+            <tbody>
+              {% for feeding_standard in feeding_standards_list %}
+              <tr>
+                <td>{{ feeding_standard }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+            {% endif %}
+          </table>
+
+          {% endif %}
+
+          <table class="table-properties table-properties_recommend">
+            <thead>
+              <tr>
+                <th>Рекомендации</th>
+              </tr>
+            </thead>
+            {% if recommendations_list %}
+            <tbody>
+              {% for recommendation in recommendations_list %}
+              <tr>
+                <td>{{ recommendation }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+            {% endif %}
+          </table>
+        </div>
+        
+        <div id="content-4" class="tabs__content-item">
+          {% if advantages_list %}
+          <ul>
+
+            {% for advantage in advantages_list %}
+            <li>{{ advantage }}</li>
+            {% endfor %}
+
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

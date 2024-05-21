@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ title }}{%endblock %} 
+
+
+{% block header %}
+
+{% include 'includes/header.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<section
+    class="login-form"
+    style="background-image: url('{% static 'images/login-img.jpg' %}')"
+   >
+    <div class="container">
+      {% include 'includes/notif_login.html' %}
+      <div class="login-form__inner">
+        <h4 class="login-form__title">Авторизация</h4>
+        <form action="{% url "user:login" %}" method="post" class="login-form__form">
+          {% csrf_token %}
+
+          
+          {% if request.GET.next %}
+            <input type="hidden" name="next" value={{request.GET.next}}>
+          {% endif %}
+          <div class="login-form__groups">
+            <div class="login-form__group">
+              <label for="id_username" class="login-form__label">Имя пользователя</label>
+              <input 
+                type="text" 
+                class="login-form__input" 
+                value="{% if form.username.value %}{{ form.username.value }}{% endif %}"
+                name="username" 
+                id="id_username" 
+                placeholder="Ваше имя пользователя" 
+                required/>
+            </div>
+            <div class="login-form__group">
+              <label for="id_password" class="login-form__label">Пароль</label>
+              <input
+                type="password"
+                class="login-form__input"
+                name="password"
+                id="id_password"
+                placeholder="Ваш пароль"
+                required
+              />
+            </div>
+            <div class="login-form__group-break"></div>
+            <button class="login-form__btn" type="submit">
+              Войти
+            </button>
+          </div>
+        </form>
+        <div class="login-form__description" >
+          <a class="login-form__description-link" href="{% url "user:registration" %}">Забыли пароль?</a> | <a class="login-form__description-link" href="{% url "user:registration" %}">Создать аккаунт</a>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+{% endblock %}

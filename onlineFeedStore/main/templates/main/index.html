@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load goods_tags %}
+{% load mptt_tags %}
+
+{% block title %}{{ title }}{%endblock %} 
+
+
+{% block header %}
+
+{% include 'includes/header.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<section
+    class="top"
+    style="background-image: url('{% static 'images/top-img.jpg' %}')"
+   >
+    <div class="container">
+      <div class="top__inner">
+        <h1 class="top__title">
+          Комбикормовый завод<br />"БиоКормЭксперт"
+        </h1>
+        <p class="top__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Pretium fusce id velit ut tortor pretium viverra suspendisse potenti.
+        </p>
+        <a href="{% url "main:about" %}" class="top__link">УЗНАТЬ БОЛЬШЕ</a>
+      </div>
+    </div>
+</section>
+
+<section class="products catalog" id="product">
+    <div class="container">
+      <p class="products__title">НАША ПРОДУКЦИЯ</p>
+      <div class="catalog__inner">
+        <div class="products__kombi">
+          <h2 class="catalog__title">Комбикорма</h2>
+          <div class="catalog__categ-cards">
+
+            {% tag_categories_kombi as categories %}
+            {% recursetree categories %}
+
+            <div class="catalog__categ-card">
+              <div class="catalog__categ-card-textbox">
+                <h3 class="catalog__categ-card-title">{{node.name}}</h3>
+                <a href="{% url "catalog:index" node.slug %}" class="catalog__categ-card-link">Подробнее</a>
+              </div>
+
+              {% if node.image %}
+              <img
+                src="{{ node.image.url }}"
+                alt="{{ node.name }}"
+                class="catalog__categ-card-img"
+              />
+              {% else %}
+              <img
+              src="{% static "images/not-found-image.svg" %}"
+              alt="{{ node.name }}"
+              class="catalog__categ-card-img"
+              />
+              {% endif %}
+
+            </div>
+
+            {% endrecursetree %}
+
+          </div>
+          <p class="catalog__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Pretium fusce id velit ut tortor pretium viverra suspendisse potenti. 
+            Accumsan sit amet nulla facilisi morbi tempus.
+          </p>
+        </div>
+
+        <div class="products__bmvd">
+          <h2 class="catalog__title">БМВД</h2>
+          <div class="catalog__prod-cards">
+            {% tag_product_bmvd as bmvd %}
+            {% for product in bmvd %}
+            <div class="catalog__prod-card">
+              <h2 class="catalog__prod-card-title">
+                {{ product.name }}
+              </h2>
+              <div class="catalod__prod-card-info">
+                {% if product.image_small %}
+                <img
+                  src="{{ product.image_small.url }}"
+                  alt="{{ product.name }}"
+                  class="catalog__prod-card-img"
+                />
+                {% else %}
+                <img
+                src="{% static "images/not-found-image.svg" %}"
+                alt="..."
+                class="catalog__prod-card-img"
+                />
+                {% endif %}
+                
+                {% if product.description %}
+                <p class="catalog__prod-card-description">
+                  {{ product.description }}
+                </p>
+                {% endif %}
+              </div>
+              <a href="{% url "catalog:product" product.slug %}" class="catalog__prod-card-link"
+                >Подробнее</a
+              >
+            </div>
+            {% endfor  %}
+          </div>
+          <p class="catalog__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Pretium fusce id velit ut tortor pretium viverra suspendisse potenti. 
+            Accumsan sit amet nulla facilisi morbi tempus.
+          </p>
+        </div>
+
+      </div>
+    </div>
+</section>
+
+<section class="advantages">
+    <div class="container">
+      <div class="advantages__inner">
+        <div class="advantages__cards">
+          <div class="advantages__card">
+            <img
+              src="{% static 'images/quality.svg' %}"
+              alt=""
+              class="advantages__card-img"
+            />
+            <h4 class="advantages__card-title">качество</h4>
+            <p class="advantages__card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Pretium fusce id velit ut tortor pretium viverra suspendisse potenti.
+            </p>
+          </div>
+          <div class="advantages__card">
+            <img src="{% static 'images/truck.svg' %}" alt="" class="advantages__card-img" />
+            <h4 class="advantages__card-title">Индивидуальный подход</h4>
+            <p class="advantages__card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Pretium fusce id velit ut tortor pretium viverra suspendisse potenti.
+            </p>
+          </div>
+          <div class="advantages__card">
+            <img
+              src="{% static 'images/manufacturing.svg' %}"
+              alt=""
+              class="advantages__card-img"
+            />
+            <h4 class="advantages__card-title">технологии</h4>
+            <p class="advantages__card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Pretium fusce id velit ut tortor pretium viverra suspendisse potenti.
+            </p>
+          </div>
+          <div class="advantages__card">
+            <img
+              src="{% static 'images/secure.svg' %}"
+              alt=""
+              class="advantages__card-img"
+            />
+            <h4 class="advantages__card-title">контроль</h4>
+            <p class="advantages__card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Pretium fusce id velit ut tortor pretium viverra suspendisse potenti.
+            </p>
+          </div>
+        </div>
+        <div class="advantages__description">
+          <h4 class="advantages__description-title">Почему мы?</h4>
+          <p class="advantages__description-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Pretium fusce id velit ut tortor pretium viverra suspendisse potenti. 
+            Accumsan sit amet nulla facilisi morbi tempus.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="map">
+    <h4 class="map__title">
+      Торговые точки, где Вы можете приобрести нашу продукцию:
+    </h4>
+    <script 
+      type="text/javascript" 
+      charset="utf-8" 
+      async 
+      src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A988a334c040e95a8132d30617da2d78543cb727d85f6cffac27992db2bb3ec2e&amp;width=100%25&amp;height=485&amp;lang=ru_RU&amp;scroll=false">
+    </script>
+</section>
+
+{% endblock %}

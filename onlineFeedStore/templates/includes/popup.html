@@ -1,0 +1,92 @@
+{% load static %}
+<div class="popup" >
+  <div class="popup__body" >
+    <h4 class="feedback-form__title">Свяжитесь с нами</h4>
+    <p class="feedback-form__description">
+      Если Вы хотите оставить заявку, задать вопрос или связаться с нами -
+      заполните форму.
+    </p>
+    <form action="{% url "main:feedback" %}" method="post"  class="form" id="feedback-form">
+      {% csrf_token %}
+      <div class="forms__group">
+        <div class="form__group">
+          <label for="id_popup_first_name" class="form__label">Имя</label>
+          <input 
+            type="text" 
+            class="form__input" 
+            placeholder="Иван"
+            id="id_popup_first_name" 
+            value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" 
+            name="first_name"
+            required
+          />
+          {% if form.first_name.errors %}
+          <div class="form__error">{{form.first_name.errors}}</div>
+          {% endif %}
+        </div>
+        <div class="form__group">
+          <label for="id_popup_email" class="form__label"
+            >Адрес электронной почты</label
+          >
+          <input
+            type="email"
+            class="form__input"
+            id ="id_popup_email"
+            value="{% if form.email.value %}{{ form.email.value }}{% endif %}" 
+            name="email"
+            placeholder="example@gmail.com"
+            required
+          />
+          {% if form.email.errors %}
+          <div class="form__error">{{form.email.errors}}</div>
+          {% endif %}
+        </div>
+        <div class="form__group">
+          <label for="id_popup_phone_number" class="form__label">Номер телефона</label>
+          <input
+            type="tel"
+            class="form__input"
+            id="id_popup_phone_number"
+            value="{% if form.phone_number.value %}{{ form.phone_number.value }}{% endif %}" 
+            name="phone_number"
+            placeholder="+79999999999"
+            required
+          />
+          {% if form.phone_number.errors %}
+          <div class="form__error">{{ form.phone_number.errors }}</div>
+          {% endif %}
+        </div>
+        <div class="form__group">
+          <label for="id_popup_subject" class="form__label">Тема обращения</label>
+          <input 
+            type="text" 
+            class="form__input" 
+            placeholder="Помощь с выбором"
+            id="id_popup_subject" 
+            value="{% if form.subject.value %}{{ form.subject.value }}{% endif %}" 
+            name="subject"
+            required
+          />
+          {% if form.subject.errors %}
+          <div class="form__error">{{form.subject.errors}}</div>
+          {% endif %}
+        </div>
+        <div class="form__group textarea__group">
+          <label for="id_popup_content" class="form__label">Дополнения</label>
+          <textarea
+            class="form__textarea"
+            placeholder="Здравствуйте, хотелось бы проконсультироваться..."
+            id="id_popup_content"
+            name="content"
+            required
+          >{% if form.content.value %}{{ form.content.value }}{% endif %}</textarea>
+          {% if form.content.errors %}
+          <div class="form__error">{{form.content.errors}}</div>
+          {% endif %}
+        </div>
+        <button class="form__btn feedback-btn" type="submit">ОТПРАВИТЬ СООБЩЕНИЕ</button>
+      </div>
+    </form>
+    <div class="popup__close">&#10006;</div>
+  </div>
+</div>

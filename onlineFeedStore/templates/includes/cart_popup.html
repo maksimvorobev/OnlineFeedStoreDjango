@@ -1,0 +1,18 @@
+{% load static %}
+
+{% load carts_tags %}
+{% user_carts request as carts %}
+
+<div class="cart_popup">
+  <div class="cart_popup__inner">
+
+    <h4 class="cart__title">Корзина</h4>
+    
+    <div id="cart-items-container">
+      {% include "carts/includes/included_cart.html" %}
+    </div>
+
+    <div class="cart_popup__close">&#10006;</div>
+    
+  </div>
+</div>

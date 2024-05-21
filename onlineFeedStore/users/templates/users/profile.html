@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ title }}{%endblock %} 
+
+
+{% block header %}
+
+{% include 'includes/header.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="profile">
+    <div class="container">
+      <div class="profile__inner">
+
+        <div class="user-data">
+          <h2 class="user-data__title">Профиль пользователя</h2>
+          <form class="form" action="{% url "user:profile" %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="user-data-form__groups">
+                <div class="user-data-form__img-inner">
+                  {% if user.image %}
+                    <img src="{{ user.image.url }}"
+                        alt="Аватар пользователя"
+                        class="user-data-form__img">
+                  {% else %}
+                    <img src="{% static 'images/baseavatar.svg' %}"
+                      alt="Аватар пользователя"
+                      class="user-data-form__img">
+                  {% endif %}
+                    <label class="user-data-form__input-img-label">
+                      <input 
+                        type="file" 
+                        class="user-data-form__input-img" 
+                        id="id_image"
+                        name="image"
+                        accept="image/*">
+                      <span class="user-data-form__input-img-span">Изменить фото</span>
+                    </label>
+                  {% if form.image.errors %}
+                  <div class="form__error">{{form.image.errors}}</div>
+                  {% endif %}
+                </div>
+                <div class="user-data-form__group-break"></div>
+                <div class="form__group">
+                  <label for="id_first_name" class="user-data-form__label">Имя</label>
+                  <input 
+                    type="text" 
+                    class="user-data-form__input" 
+                    id="id_first_name" 
+                    value="{{ form.first_name.value }}" 
+                    name="first_name" 
+                    placeholder="Иван" 
+                    required
+                  />
+                  {% if form.first_name.errors %}
+                  <div class="form__error">{{form.first_name.errors}}</div>
+                  {% endif %}
+                </div>
+                <div class="form__group">
+                  <label for="id_last_name" class="user-data-form__label">Фамилия</label>
+                  <input 
+                    type="text" 
+                    class="user-data-form__input" 
+                    id="id_last_name"
+                    value="{{ form.last_name.value }}" 
+                    name="last_name"
+                    placeholder="Иванов" 
+                    required
+                  />
+                  {% if form.last_name.errors %}
+                  <div class="form__error">{{form.last_name.errors}}</div>
+                  {% endif %}
+                </div>
+                <div class="form__group">
+                  <label for="id_username" class="user-data-form__label">Имя пользователя</label>
+                  <input 
+                    type="text" 
+                    class="user-data-form__input" 
+                    id="id_username"
+                    value="{{ form.username.value }}" 
+                    name="username" 
+                    placeholder="Ваше имя пользователя" 
+                    required
+                  />
+                  {% if form.username.errors %}
+                  <div class="form__error">{{form.username.errors}}</div>
+                  {% endif %}
+                </div>
+                <div class="form__group">
+                  <label for="id_email" class="user-data-form__label"
+                    >Адрес электронной почты</label
+                  >
+                  <input
+                    type="email"
+                    class="user-data-form__input"
+                    id ="id_email"
+                    value="{{ form.email.value }}" 
+                    name="email"
+                    placeholder="example@gmail.com"
+                    required
+                  />
+                  {% if form.email.errors %}
+                  <div class="form__error">{{form.email.errors}}</div>
+                  {% endif %}
+                </div>
+                <div class="user-data-form__group-break"></div>
+                <button class="form__btn user-data-form__btn" type="submit">
+                  Сохранить
+                </button>
+                
+              </div>
+            </form>
+        </div>
+        
+        <div class="orders" id="orders">
+          <h2 class="orders__title">Мои заказы</h2>
+          <div class="orders-tabs">
+            {% if orders %}
+            {% for order in orders %}
+            <div class="orders-tab">
+              {% if order.status == "Доставлен" %}
+              <button class="orders-tab__btn orders-tab__btn_green">
+                <div class="orders-tab__btn-text">
+                  <p class="orders-tab__btn-text">
+                    Заказ № {{ order.id }} - {{ order.created_timestamp }} |
+                  </p>
+                  <p class="orders-tab__btn-text">
+                    Статус: <strong>{{ order.status }}</strong>
+                  </p>
+                </div>
+                <img
+                  src="{% static "images/arrow-end-down.svg" %}"
+                  alt="..."
+                  class="orders-tab__btn-img"
+                />
+              </button>
+              {% elif order.status == "Отменен" %}
+              <button class="orders-tab__btn orders-tab__btn_red">
+                <div class="orders-tab__btn-text">
+                  <p class="orders-tab__btn-text">
+                    Заказ № {{ order.id }} - {{ order.created_timestamp }} |
+                  </p>
+                  <p class="orders-tab__btn-text">
+                    Статус: <strong>{{ order.status }}</strong>
+                  </p>
+                </div>
+                <img
+                  src="{% static "images/arrow-end-down.svg" %}"
+                  alt="..."
+                  class="orders-tab__btn-img"
+                />
+              </button>
+              {% elif order.status == "Отправлен" %}
+              <button class="orders-tab__btn orders-tab__btn_blue">
+                <div class="orders-tab__btn-text">
+                  <p class="orders-tab__btn-text">
+                    Заказ № {{ order.id }} - {{ order.created_timestamp }} |
+                  </p>
+                  <p class="orders-tab__btn-text">
+                    Статус: <strong>{{ order.status }}</strong>
+                  </p>
+                </div>
+                <img
+                  src="{% static "images/arrow-end-down.svg" %}"
+                  alt="..."
+                  class="orders-tab__btn-img"
+                />
+              </button>
+              {% else %}
+              <button class="orders-tab__btn">
+                <div class="orders-tab__btn-text">
+                  <p class="orders-tab__btn-text">
+                    Заказ № {{ order.id }} - {{ order.created_timestamp }} |
+                  </p>
+                  <p class="orders-tab__btn-text">
+                    Статус: <strong>{{ order.status }}</strong>
+                  </p>
+                </div>
+                <img
+                  src="{% static "images/arrow-end-down.svg" %}"
+                  alt="..."
+                  class="orders-tab__btn-img"
+                />
+              </button>
+              {% endif %}
+              <div class="orders-tab__content">
+                <table class="orders-tab__table">
+                  <thead>
+                      <tr>
+                          <th>Товар</th>
+                          <th>Количество</th>
+                          <th>Цена</th>
+                          <th>Стоимость</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {% for item in order.orderitem_set.all %}
+                      <tr>
+                          <td><a href="{% url "goods:product" item.product.slug %}">{{ item.product.name }}</a></td>
+                          <td>{{ item.quantity }}</td>
+                          <td>{{ item.price }} &#x20bd;</td>
+                          <td>{{ item.products_price }}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                <div class="orders-tab__total-price">
+                    <p><strong>Итого:</strong></p>
+                    <p><strong>{{ order.orderitem_set.total_price }} &#x20bd;</strong></p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p class="orders-tabs__not-orders-text" >У вас нет заказов</p>
+            {% endif %}
+
+          </div>
+        </div>
+        
+      </div>
+    </div>
+</section>
+
+{% endblock %}

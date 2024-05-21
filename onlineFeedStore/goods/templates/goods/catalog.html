@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load mptt_tags %}
+
+
+{% block title %}{{ title }}{% endblock %} 
+
+
+{% block header %}
+
+{% include 'includes/header.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="catalog" id="product">
+  <div class="container">
+    <div class="catalog__inner">
+
+      {% if bmvd %}
+
+      {% include "goods/includes/included_catalog_bmvd.html" %}
+
+      {% else %}
+
+      {% include "goods/includes/included_catalog_kombi.html" %}
+      
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

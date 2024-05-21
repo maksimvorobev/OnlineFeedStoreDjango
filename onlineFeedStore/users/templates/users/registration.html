@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ title }}{%endblock %} 
+
+
+{% block header %}
+
+{% include 'includes/header.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<section
+    class="login-form"
+    style="background-image: url('{% static 'images/login-img.jpg' %}')"
+   >
+    <div class="container">
+      <div class="login-form__inner">
+        <h4 class="login-form__title">Регистрация</h4>
+        <form action="{% url "user:registration" %}" method="post" class="login-form__form">
+          {% csrf_token %}
+
+          <div class="login-form__groups">
+            <div class="login-form__group">
+              <label for="id_first_name" class="login-form__label">Имя</label>
+              <input 
+                type="text" 
+                class="login-form__input" 
+                id="id_first_name" 
+                value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" 
+                name="first_name" 
+                placeholder="Иван" 
+                required
+              />
+              {% if form.first_name.errors %}
+              <div class="form__error">{{form.first_name.errors}}</div>
+              {% endif %}
+            </div>
+            <div class="login-form__group">
+              <label for="id_last_name" class="login-form__label">Фамилия</label>
+              <input 
+                type="text" 
+                class="login-form__input" 
+                id="id_last_name"
+                value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}" 
+                name="last_name"
+                placeholder="Иванов" 
+                required
+              />
+              {% if form.last_name.errors %}
+              <div class="form__error">{{form.last_name.errors}}</div>
+              {% endif %}
+            </div>
+            <div class="login-form__group">
+              <label for="id_username" class="login-form__label">Имя пользователя</label>
+              <input 
+                type="text" 
+                class="login-form__input" 
+                id="id_username"
+                value="{% if form.username.value %}{{ form.username.value }}{% endif %}" 
+                name="username" 
+                placeholder="Ваше имя пользователя" 
+                required
+              />
+              {% if form.username.errors %}
+              <div class="form__error">{{form.username.errors}}</div>
+              {% endif %}
+            </div>
+            <div class="login-form__group">
+              <label for="id_email" class="login-form__label"
+                >Адрес электронной почты</label
+              >
+              <input
+                type="email"
+                class="login-form__input"
+                id ="id_email"
+                value="{% if form.email.value %}{{ form.email.value }}{% endif %}" 
+                name="email"
+                placeholder="example@gmail.com"
+                required
+              />
+              {% if form.email.errors %}
+              <div class="form__error">{{form.email.errors}}</div>
+              {% endif %}
+            </div>
+            <div class="login-form__group">
+              <label for="id_password1" class="login-form__label">Пароль</label>
+              <input
+                type="password"
+                class="login-form__input"
+                id="id_password1"
+                value="{% if form.password1.value %}{{ form.password1.value }}{% endif %}" 
+                name="password1"
+                placeholder="Введите пароль"
+                required
+              />
+              {% if form.password1.errors %}
+              <div class="form__error">{{form.password1.errors}}</div>
+              {% endif %}
+            </div>
+            <div class="login-form__group">
+              <label for="id_password2" class="login-form__label">Подтверждение пароля</label>
+              <input
+                type="password"
+                class="login-form__input"
+                id="id_password2"
+                value="{% if form.password2.value %}{{ form.password2.value }}{% endif %}" 
+                name="password2"
+                placeholder="Подтвердите пароль"
+                required
+              />
+              {% if form.password2.errors %}
+              <div class="form__error">{{form.password2.errors}}</div>
+              {% endif %}
+            </div>
+            <div class="login-form__group-break"></div>
+            <button class="login-form__btn reg-form__btn" type="submit">
+              Зарегистрироваться
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

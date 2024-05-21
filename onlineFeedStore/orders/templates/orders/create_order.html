@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load carts_tags %}
+
+{% block title %}{{ title }}{% endblock %} 
+
+
+{% block header %}
+
+{% include 'includes/header_no_cart.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="order">
+  <div class="container">
+    <div class="order__inner">
+
+      <h3 class="order__title">Выбранные товары</h3>
+
+      <div class="order-cart-container" id="cart-items-container">
+        {% user_carts request as carts %}
+        {% include "carts/includes/included_cart.html" %}
+      </div>
+
+      <h3 class="order__title">Детали заказа</h3>
+      <div class="order-form__inner">
+        <form action="{% url "orders:create_order" %}" method="post" >
+          {% csrf_token %}
+          <div class="order-form__groups">
+            <div class="order-form__group">
+              <label for="id_first_name" class="order-form__label">Имя</label>
+              <input 
+                type="text" 
+                class="order-form__input" 
+                id="id_first_name" 
+                value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" 
+                name="first_name"
+                required
+              />
+              {% if form.first_name.errors %}
+              <div class="form__error">{{form.first_name.errors}}</div>
+              {% endif %}
+            </div>
+            <div class="order-form__group">
+              <label for="id_last_name" class="order-form__label">Фамилия</label>
+              <input 
+                type="text" 
+                class="order-form__input" 
+                id="id_last_name"
+                value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}" 
+                name="last_name"
+                required
+              />
+              {% if form.last_name.errors %}
+              <div class="form__error">{{form.last_name.errors}}</div>
+              {% endif %}
+            </div>
+            <div class="order-form__group">
+              <label for="id_phone_number" class="order-form__label">Номер телефона</label>
+              <input
+                type="tel"
+                class="order-form__input"
+                id="id_phone_number"
+                value="{% if form.phone_number.value %}{{ form.phone_number.value }}{% endif %}" 
+                name="phone_number"
+                placeholder="+79999999999"
+                required
+              />
+              {% if form.phone_number.errors %}
+              <div class="form__error">{{ form.phone_number.errors }}</div>
+              {% endif %}
+            </div>
+
+            <div class="order-forms__group-break"></div>
+
+            <div class="order-form__group order-form__check-group">
+              <label for="delivery" class="order-form__label">Способ доставки: </label>
+              <div class="order-form__check">
+                <input 
+                  class="order-form__check-input" 
+                  type="radio" 
+                  name="requires_delivery"
+                  id="id_requires_delivery_1" 
+                  value="1" 
+                  checked>
+                <label class="order-form__check-label" for="id_requires_delivery_1">Доставка</label>
+              </div>
+              <div class="order-form__check">
+                <input 
+                  class="order-form__check-input" 
+                  type="radio" 
+                  name="requires_delivery"
+                  id="id_requires_delivery_2" 
+                  value="0">
+                <label class="order-form__check-label" for="id_requires_delivery_2">Самовывоз</label>
+              </div>
+            </div>
+
+            <div class="order-form__group order-textarea__group" id="deliveryAddressField">
+              <label for="id_delivery_address" class="order-form__label">Адрес доставки: </label>
+              <textarea
+                class="order-form__textarea"
+                id="id_delivery_address"
+                value="{% if form.delivery_address.value %}{{ form.delivery_address.value }}{% endif %}" 
+                name="delivery_address"
+                rows="2"
+              ></textarea>
+              {% if form.delivery_address.errors %}
+              <div class="form__error">{{form.delivery_address.errors}}</div>
+              {% endif %}
+            </div>
+
+            <div class="order-form__group order-form__check-group">
+              <label class="order-form__label">Способ оплаты: </label>
+              <div class="order-form__check">
+                  <input 
+                    class="order-form__check-input" 
+                    type="radio" 
+                    name="payment_on_get"
+                    id="id_payment_on_get_1" 
+                    value="0" 
+                    checked>
+                  <label class="order-form__check-label" for="id_payment_on_get_1">Оплата картой</label>
+              </div>
+              <div class="order-form__check">
+                <input 
+                  class="order-form__check-input" 
+                  type="radio" 
+                  name="payment_on_get"
+                  id="id_payment_on_get_2" 
+                  value="1">
+                <label class="order-form__check-label" for="id_payment_on_get_2">Наличными/картой при получении</label>
+              </div>
+              {% if form.payment_on_get.errors %}
+              <di class="form__error"v>{{form.payment_on_get.errors}}</di>
+              {% endif %}
+            </div>
+
+            <div class="order-forms__group-break"></div>
+            
+            <button class="order-form__btn" type="submit">
+              Оформить заказ
+            </button>
+            
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{% endblock %}

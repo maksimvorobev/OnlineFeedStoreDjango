@@ -1,0 +1,128 @@
+[
+  {
+    "model": "goods.categories",
+    "pk": 1,
+    "fields": {
+      "name": "Птицеводство",
+      "slug": "pticevodstvo",
+      "parent": null,
+      "image": "categories_images/kombi-chicken_h32RxMD.jpg",
+      "lft": 1,
+      "rght": 10,
+      "tree_id": 1,
+      "level": 0
+    }
+  },
+  {
+    "model": "goods.categories",
+    "pk": 2,
+    "fields": {
+      "name": "Кролики",
+      "slug": "kroliki",
+      "parent": null,
+      "image": "categories_images/kombi-rabbit.jpg",
+      "lft": 1,
+      "rght": 2,
+      "tree_id": 3,
+      "level": 0
+    }
+  },
+  {
+    "model": "goods.categories",
+    "pk": 3,
+    "fields": {
+      "name": "Бройлеры",
+      "slug": "brojlery",
+      "parent": 1,
+      "image": "categories_images/kombi-brojler.jpg",
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "goods.categories",
+    "pk": 4,
+    "fields": {
+      "name": "Куры-несушки",
+      "slug": "kury-nesushki",
+      "parent": 1,
+      "image": "categories_images/kombi-nesushka.jpg",
+      "lft": 4,
+      "rght": 5,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "goods.categories",
+    "pk": 6,
+    "fields": {
+      "name": "Свиноводство",
+      "slug": "svinovodstvo",
+      "parent": null,
+      "image": "categories_images/kombi-pig.jpg",
+      "lft": 1,
+      "rght": 2,
+      "tree_id": 2,
+      "level": 0
+    }
+  },
+  {
+    "model": "goods.categories",
+    "pk": 7,
+    "fields": {
+      "name": "КРС",
+      "slug": "krs",
+      "parent": null,
+      "image": "categories_images/kombi-krs_0djfNR6.jpg",
+      "lft": 1,
+      "rght": 2,
+      "tree_id": 4,
+      "level": 0
+    }
+  },
+  {
+    "model": "goods.categories",
+    "pk": 8,
+    "fields": {
+      "name": "Водоплавающие",
+      "slug": "vodoplavayushie",
+      "parent": 1,
+      "image": "categories_images/kombi-duck.jpg",
+      "lft": 6,
+      "rght": 7,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "goods.categories",
+    "pk": 9,
+    "fields": {
+      "name": "Индейки",
+      "slug": "indejki",
+      "parent": 1,
+      "image": "categories_images/kombi-turkey.jpg",
+      "lft": 8,
+      "rght": 9,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "goods.categories",
+    "pk": 11,
+    "fields": {
+      "name": "БМВД",
+      "slug": "bmvd",
+      "parent": null,
+      "image": "",
+      "lft": 1,
+      "rght": 2,
+      "tree_id": 5,
+      "level": 0
+    }
+  }
+]

@@ -1,0 +1,48 @@
+{% load static %}
+
+<h2 class="catalog__title">БМВД</h2>
+
+<div class="catalog__prod-cards">
+  {% if goods %}
+  {% for product in goods %}
+  <div class="catalog__prod-card">
+    <h2 class="catalog__prod-card-title">
+      {{ product.name }}
+    </h2>
+    <div class="catalod__prod-card-info">
+      {% if product.image_small %}
+      <img
+        src="{{ product.image_small.url }}"
+        alt="{{ product.name }}"
+        class="catalog__prod-card-img"
+      />
+      {% else %}
+      <img
+      src="{% static "images/not-found-image.svg" %}"
+      alt="..."
+      class="catalog__prod-card-img"
+      />
+      {% endif %}
+      
+      {% if product.description %}
+      <p class="catalog__prod-card-description">
+        {{ product.description }}
+      </p>
+      {% endif %}
+    </div>
+    <a href="{% url "catalog:product" product.slug %}" class="catalog__prod-card-link"
+      >Подробнее</a
+    >
+  </div>
+  {% endfor  %}
+  {% else %}
+    <p class="catalog__no-products-text">По данному запросу ничего не найдено.</p>
+  {% endif %}
+</div>
+
+<p class="catalog__description">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+  Pretium fusce id velit ut tortor pretium viverra suspendisse potenti. 
+  Accumsan sit amet nulla facilisi morbi tempus.
+</p>

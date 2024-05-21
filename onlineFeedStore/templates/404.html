@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %} 
+
+{% block header %}
+
+{% include 'includes/header.html' %}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="not-found">
+  <div class="container">
+    <img
+      src="{% static "images/not-found-chicken.svg" %}"
+      alt=""
+      class="not-found__img"
+    />
+    <p class="not-found__num">404</p>
+    <p class="not-found__text">К сожалению, этой страницы нет</p>
+    <a href="{% url "main:index" %}" class="not-found__link">Вернуться на главную страницу</a>
+  </div>
+</section>
+
+{% endblock %}

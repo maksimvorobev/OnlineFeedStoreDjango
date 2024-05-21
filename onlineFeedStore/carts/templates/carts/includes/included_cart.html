@@ -1,0 +1,72 @@
+{% load static %}
+{% load carts_tags %}
+
+{% user_carts request as carts %}
+
+
+<div class="cart-product">
+    {% for cart in carts %}
+        <div class="cart-product__header">
+            <h5 class="cart-product__title">{{ cart.product.name }}</h5>
+        </div>
+        <ul class="cart-product__list">
+            <li class="cart-product__list-item">
+                <div class="cart-product__info">
+                    <div class="cart-product__quantity">
+                        <div class="cart-product__quantity-group input-group">
+                            <span class="cart-product__quantity-input-group-btn">
+                                <button type="button" class="cart-product__quantity-input-btn decrement"
+                                    data-cart-id="{{ cart.id }}" data-cart-change-url="{% url "cart:cart_change" %}">
+                                    {% csrf_token %}-</button>
+                            </span>
+                            <input type="text" class="cart-product__quantity-input number" value="{{ cart.quantity }}"
+                                readonly>
+                            <span class="cart-product__quantity-input-group-btn">
+                                <button type="button" class="cart-product__quantity-input-btn increment"
+                                    data-cart-id="{{ cart.id }}" data-cart-change-url="{% url "cart:cart_change" %}">
+                                    {% csrf_token %}+</button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="cart-product__price">
+                        <p class="cart-product__price-text">x {{ cart.product.sell_price }} = </p>
+                    </div>
+
+                    <div class="cart-product__amount">
+                    <p class="cart-product__amount-text">{{ cart.products_price }} &#x20bd;</p>
+                    </div>
+
+                    <div class="cart-product__delete">
+                        <a href="{% url "cart:cart_remove" %}" class="cart-product__delete-btn remove-from-cart"
+                         data-cart-id="{{ cart.id }}">
+                        {% csrf_token %}
+                        <img
+                            src="{% static 'images/cart-delete.svg' %}"
+                            alt="delete"
+                            class="cart-product__delete-img"
+                        />
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    {% endfor %}
+</div>
+
+<div class="cart__footer">
+      <div class="cart__footer-group">
+          <p class="cart__footer-text">Итого <strong>{{ carts.total_quantity }}</strong> товар(а) на сумму</p>
+          <h5 class="cart__footer-amount">{{ carts.total_price }} &#x20bd;</h5>
+      </div>
+</div>
+
+{% if carts and not order %}
+    <a class="cart__btn" href="{% url "orders:create_order" %}">
+    Оформить заказ
+    </a>
+{% endif %}
+
+
+  
+

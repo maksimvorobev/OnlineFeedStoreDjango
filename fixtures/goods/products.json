@@ -1,0 +1,191 @@
+[
+  {
+    "model": "goods.products",
+    "pk": 1,
+    "fields": {
+      "name": "Бройлер 1",
+      "slug": "brojler-1",
+      "category": 3,
+      "image_small": "",
+      "image_big": "goods_images/bag-no-sticker_xG0zkYW.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "price": "130.00",
+      "quantity": 0,
+      "advantages": "Lorem ipsum dolor sit amet, consectetur adipiscing\r\nConvallis a cras semper auctor neque vitae tempus\r\nDiam phasellus vestibulum lorem sed risus\r\nUltricies tristique nulla aliquet enim tortor at auctor\r\nPretium quam vulputate dignissim suspendisse in est ante in\r\nTristique senectus et netus et malesuada fames ac turpis",
+      "release_form": "Гранула, россыпь",
+      "packing": "5 кг / 10 кг / 25 кг",
+      "nutritional_info": "Обменная энергия, мин;3000;Ккал/кг\r\nСырой протеин, мин;20,60;%\r\nСырая клетчатка, макс;2,60;%\r\nЛизин, мин;1,10;%\r\nМетионин+цистин, мин;0,70;%\r\nТреонин, мин;0,83;%\r\nТриптофан, мин;0,24;%\r\nКальций, мин;1,00;%\r\nФосфор, мин;0,80;%\r\nНатрий;0,14;%",
+      "composition": "Bibendum\r\nArcu\r\nVitae\r\nElementum\r\nCommodo ullamcorper\r\nVitae\r\nMaecenas",
+      "feeding_standards": "Rhoncus dolor purus non enim praesent elementum",
+      "recommendations": "Et ligula ullamcorper malesuada proin libero\r\nVel pharetra vel turpis nunc eget\r\nEget mauris pharetra et ultrices neque"
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 2,
+    "fields": {
+      "name": "Бройлер 2",
+      "slug": "brojler-2",
+      "category": 3,
+      "image_small": "",
+      "image_big": "goods_images/bag-no-sticker_U0d2f4M.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "price": "120.00",
+      "quantity": 124,
+      "advantages": "Lorem ipsum dolor sit amet, consectetur adipiscing\r\nConvallis a cras semper auctor neque vitae tempus\r\nDiam phasellus vestibulum lorem sed risus\r\nUltricies tristique nulla aliquet enim tortor at auctor\r\nPretium quam vulputate dignissim suspendisse in est ante in\r\nTristique senectus et netus et malesuada fames ac turpis",
+      "release_form": "Гранула, россыпь",
+      "packing": "5 кг / 10 кг / 25 кг",
+      "nutritional_info": "Обменная энергия, мин;3000;Ккал/кг\r\nСырой протеин, мин;20,60;%\r\nСырая клетчатка, макс;2,60;%\r\nЛизин, мин;1,10;%\r\nМетионин+цистин, мин;0,70;%\r\nТреонин, мин;0,83;%\r\nТриптофан, мин;0,24;%\r\nКальций, мин;1,00;%\r\nФосфор, мин;0,80;%\r\nНатрий;0,14;%",
+      "composition": "Bibendum\r\nArcu\r\nVitae\r\nElementum\r\nCommodo ullamcorper\r\nVitae\r\nMaecenas",
+      "feeding_standards": "Rhoncus dolor purus non enim praesent elementum",
+      "recommendations": "Et ligula ullamcorper malesuada proin libero\r\nVel pharetra vel turpis nunc eget\r\nEget mauris pharetra et ultrices neque"
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 3,
+    "fields": {
+      "name": "Несушка 1",
+      "slug": "nesushka-1",
+      "category": 4,
+      "image_small": "",
+      "image_big": "goods_images/bag-no-sticker_0lkJyG9.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "price": "125.00",
+      "quantity": 105,
+      "advantages": "Lorem ipsum dolor sit amet, consectetur adipiscing\r\nConvallis a cras semper auctor neque vitae tempus\r\nDiam phasellus vestibulum lorem sed risus\r\nUltricies tristique nulla aliquet enim tortor at auctor\r\nPretium quam vulputate dignissim suspendisse in est ante in\r\nTristique senectus et netus et malesuada fames ac turpis",
+      "release_form": "Гранула, россыпь",
+      "packing": "5 кг / 10 кг / 25 кг",
+      "nutritional_info": "Обменная энергия, мин;3000;Ккал/кг\r\nСырой протеин, мин;20,60;%\r\nСырая клетчатка, макс;2,60;%\r\nЛизин, мин;1,10;%\r\nМетионин+цистин, мин;0,70;%\r\nТреонин, мин;0,83;%\r\nТриптофан, мин;0,24;%\r\nКальций, мин;1,00;%\r\nФосфор, мин;0,80;%\r\nНатрий;0,14;%",
+      "composition": "Bibendum\r\nArcu\r\nVitae\r\nElementum\r\nCommodo ullamcorper\r\nVitae\r\nMaecenas",
+      "feeding_standards": "Rhoncus dolor purus non enim praesent elementum",
+      "recommendations": "Et ligula ullamcorper malesuada proin libero\r\nVel pharetra vel turpis nunc eget\r\nEget mauris pharetra et ultrices neque"
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 4,
+    "fields": {
+      "name": "Несушка 2",
+      "slug": "nesushka-2",
+      "category": 4,
+      "image_small": "",
+      "image_big": "goods_images/bag-no-sticker_Gu3BB9C.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "price": "100.00",
+      "quantity": 188,
+      "advantages": "Lorem ipsum dolor sit amet, consectetur adipiscing\r\nConvallis a cras semper auctor neque vitae tempus\r\nDiam phasellus vestibulum lorem sed risus\r\nUltricies tristique nulla aliquet enim tortor at auctor\r\nPretium quam vulputate dignissim suspendisse in est ante in\r\nTristique senectus et netus et malesuada fames ac turpis",
+      "release_form": "Гранула, россыпь",
+      "packing": "5 кг / 10 кг / 25 кг",
+      "nutritional_info": "Обменная энергия, мин;3000;Ккал/кг\r\nСырой протеин, мин;20,60;%\r\nСырая клетчатка, макс;2,60;%\r\nЛизин, мин;1,10;%\r\nМетионин+цистин, мин;0,70;%\r\nТреонин, мин;0,83;%\r\nТриптофан, мин;0,24;%\r\nКальций, мин;1,00;%\r\nФосфор, мин;0,80;%\r\nНатрий;0,14;%",
+      "composition": "Bibendum\r\nArcu\r\nVitae\r\nElementum\r\nCommodo ullamcorper\r\nVitae\r\nMaecenas",
+      "feeding_standards": "Rhoncus dolor purus non enim praesent elementum",
+      "recommendations": "Et ligula ullamcorper malesuada proin libero\r\nVel pharetra vel turpis nunc eget\r\nEget mauris pharetra et ultrices neque"
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 5,
+    "fields": {
+      "name": "Несушка 3",
+      "slug": "nesushka-3",
+      "category": 4,
+      "image_small": "",
+      "image_big": "goods_images/bag-no-sticker_WUpU8N2.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "price": "160.00",
+      "quantity": 210,
+      "advantages": "Lorem ipsum dolor sit amet, consectetur adipiscing\r\nConvallis a cras semper auctor neque vitae tempus\r\nDiam phasellus vestibulum lorem sed risus\r\nUltricies tristique nulla aliquet enim tortor at auctor\r\nPretium quam vulputate dignissim suspendisse in est ante in\r\nTristique senectus et netus et malesuada fames ac turpis",
+      "release_form": "Гранула, россыпь",
+      "packing": "5 кг / 10 кг / 25 кг",
+      "nutritional_info": "Обменная энергия, мин;3000;Ккал/кг\r\nСырой протеин, мин;20,60;%\r\nСырая клетчатка, макс;2,60;%\r\nЛизин, мин;1,10;%\r\nМетионин+цистин, мин;0,70;%\r\nТреонин, мин;0,83;%\r\nТриптофан, мин;0,24;%\r\nКальций, мин;1,00;%\r\nФосфор, мин;0,80;%\r\nНатрий;0,14;%",
+      "composition": "Bibendum\r\nArcu\r\nVitae\r\nElementum\r\nCommodo ullamcorper\r\nVitae\r\nMaecenas",
+      "feeding_standards": "Rhoncus dolor purus non enim praesent elementum",
+      "recommendations": "Et ligula ullamcorper malesuada proin libero\r\nVel pharetra vel turpis nunc eget\r\nEget mauris pharetra et ultrices neque"
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 6,
+    "fields": {
+      "name": "Кролик 1",
+      "slug": "krolik-1",
+      "category": 2,
+      "image_small": "",
+      "image_big": "goods_images/bag-no-sticker_DlCnTT7.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "price": "150.00",
+      "quantity": 104,
+      "advantages": "Lorem ipsum dolor sit amet, consectetur adipiscing\r\nConvallis a cras semper auctor neque vitae tempus\r\nDiam phasellus vestibulum lorem sed risus\r\nUltricies tristique nulla aliquet enim tortor at auctor\r\nPretium quam vulputate dignissim suspendisse in est ante in\r\nTristique senectus et netus et malesuada fames ac turpis",
+      "release_form": "Гранула",
+      "packing": "5 кг / 10 кг / 25 кг",
+      "nutritional_info": "Обменная энергия, мин;3000;Ккал/кг\r\nСырой протеин, мин;20,60;%\r\nСырая клетчатка, макс;2,60;%\r\nЛизин, мин;1,10;%\r\nМетионин+цистин, мин;0,70;%\r\nТреонин, мин;0,83;%\r\nТриптофан, мин;0,24;%\r\nКальций, мин;1,00;%\r\nФосфор, мин;0,80;%\r\nНатрий;0,14;%",
+      "composition": "Bibendum\r\nArcu\r\nVitae\r\nElementum\r\nCommodo ullamcorper\r\nVitae\r\nMaecenas",
+      "feeding_standards": "Rhoncus dolor purus non enim praesent elementum",
+      "recommendations": "Et ligula ullamcorper malesuada proin libero\r\nVel pharetra vel turpis nunc eget\r\nEget mauris pharetra et ultrices neque"
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 9,
+    "fields": {
+      "name": "БМВД 1",
+      "slug": "bmvd-1",
+      "category": 11,
+      "image_small": "",
+      "image_big": "goods_images/bag-no-sticker_GT27JAf.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "price": "200.00",
+      "quantity": 100,
+      "advantages": "Lorem ipsum dolor sit amet, consectetur adipiscing\r\nConvallis a cras semper auctor neque vitae tempus\r\nDiam phasellus vestibulum lorem sed risus\r\nUltricies tristique nulla aliquet enim tortor at auctor\r\nPretium quam vulputate dignissim suspendisse in est ante in\r\nTristique senectus et netus et malesuada fames ac turpis",
+      "release_form": "Россыпь",
+      "packing": "5 кг / 10 кг / 25 кг",
+      "nutritional_info": "Обменная энергия, мин;3000;Ккал/кг\r\nСырой протеин, мин;20,60;%\r\nСырая клетчатка, макс;2,60;%\r\nЛизин, мин;1,10;%\r\nМетионин+цистин, мин;0,70;%\r\nТреонин, мин;0,83;%\r\nТриптофан, мин;0,24;%\r\nКальций, мин;1,00;%\r\nФосфор, мин;0,80;%\r\nНатрий;0,14;%",
+      "composition": "",
+      "feeding_standards": "Куры-несушки, бройлеры, утки, гуси;от 5 до 20 %\r\nКРС, овцы, козы;до 10 %\r\nСобаки;до 20 %\r\nСвиньи;от 5 до 20 %",
+      "recommendations": "Et ligula ullamcorper malesuada proin libero\r\nVel pharetra vel turpis nunc eget\r\nEget mauris pharetra et ultrices neque"
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 10,
+    "fields": {
+      "name": "БМВД 2",
+      "slug": "bmvd-2",
+      "category": 11,
+      "image_small": "",
+      "image_big": "goods_images/bag-no-sticker_bK4u6GF.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "price": "135.00",
+      "quantity": 217,
+      "advantages": "Lorem ipsum dolor sit amet, consectetur adipiscing\r\nConvallis a cras semper auctor neque vitae tempus\r\nDiam phasellus vestibulum lorem sed risus\r\nUltricies tristique nulla aliquet enim tortor at auctor\r\nPretium quam vulputate dignissim suspendisse in est ante in\r\nTristique senectus et netus et malesuada fames ac turpis",
+      "release_form": "Россыпь",
+      "packing": "5 кг / 10 кг / 25 кг",
+      "nutritional_info": "Обменная энергия, мин;3000;Ккал/кг\r\nСырой протеин, мин;20,60;%\r\nСырая клетчатка, макс;2,60;%\r\nЛизин, мин;1,10;%\r\nМетионин+цистин, мин;0,70;%\r\nТреонин, мин;0,83;%\r\nТриптофан, мин;0,24;%\r\nКальций, мин;1,00;%\r\nФосфор, мин;0,80;%\r\nНатрий;0,14;%",
+      "composition": "",
+      "feeding_standards": "Куры-несушки, бройлеры, утки, гуси;от 5 до 15 %\r\nКРС, овцы, козы;до 10 %\r\nСобаки;до 20 %\r\nСвиньи;от 5 до 15 %",
+      "recommendations": "Et ligula ullamcorper malesuada proin libero\r\nVel pharetra vel turpis nunc eget\r\nEget mauris pharetra et ultrices neque"
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 11,
+    "fields": {
+      "name": "БМВД 3",
+      "slug": "bmvd-3",
+      "category": 11,
+      "image_small": "",
+      "image_big": "goods_images/bag-no-sticker.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "price": "110.00",
+      "quantity": 180,
+      "advantages": "Lorem ipsum dolor sit amet, consectetur adipiscing\r\nConvallis a cras semper auctor neque vitae tempus\r\nDiam phasellus vestibulum lorem sed risus\r\nUltricies tristique nulla aliquet enim tortor at auctor",
+      "release_form": "Россыпь",
+      "packing": "5 кг / 10 кг / 25 кг",
+      "nutritional_info": "Обменная энергия, мин;3000;Ккал/кг\r\nСырой протеин, мин;20,60;%\r\nСырая клетчатка, макс;2,60;%\r\nЛизин, мин;1,10;%\r\nМетионин+цистин, мин;0,70;%\r\nТреонин, мин;0,83;%\r\nТриптофан, мин;0,24;%\r\nКальций, мин;1,00;%\r\nФосфор, мин;0,80;%\r\nНатрий;0,14;%",
+      "composition": "",
+      "feeding_standards": "",
+      "recommendations": "Et ligula ullamcorper malesuada proin libero\r\nVel pharetra vel turpis nunc eget\r\nEget mauris pharetra et ultrices neque"
+    }
+  }
+]

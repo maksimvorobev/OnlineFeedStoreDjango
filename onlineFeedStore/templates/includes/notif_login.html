@@ -1,0 +1,10 @@
+{% load static %}
+
+{% if form.non_field_errors %}
+    <div class="notif__inner">
+      <div class="notif__alert-info" role="alert">
+          {{form.non_field_errors}}
+          <button type="button" class="notif__btn-close" aria-label="Close">&#10006;</button>
+      </div>
+    </div>
+{% endif %}

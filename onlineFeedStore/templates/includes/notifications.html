@@ -1,0 +1,26 @@
+{% load static %}
+
+<div class="notif-message__inner">
+  {% if messages %}
+      {% for message in messages %}
+          {% if message.tags == 'success' %}
+          <div id="notification" class="notif-message__text notif-message__text-success" role="alert">
+              {{ message }}
+          </div>
+          {% endif %}
+          {% if message.tags == 'warning' %}
+          <div id="notification" class="notif-message__text notif-message__text-warning" role="alert">
+              {{ message }}
+          </div>
+          {% endif %}
+          {% if message.tags == 'error' %}
+          <div id="notification" class="notif-message__text notif-message__text-error" role="alert">
+              {{ message }}
+          </div>
+          {% endif %}
+      {% endfor %}
+  {% else %}
+  <div id="jq-notification" class="notif-message__text notif-message__text-info" style="display: none;" role="alert">
+  </div>
+  {% endif %}
+</div>

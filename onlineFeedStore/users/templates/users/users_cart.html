@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load carts_tags %}
+
+{% block title %}{{ title }}{% endblock %} 
+
+
+{% block header %}
+
+{% include 'includes/header_no_cart.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+{% user_carts request as carts %}
+<section class="cart">
+  <div class="container">
+    <div class="cart__inner">
+
+      <h4 class="cart__title">Корзина</h4>
+
+      <div id="cart-items-container">
+        {% include "carts/includes/included_cart.html" %}
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %} 
+
+
+{% block header %}
+
+{% include 'includes/header.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="contacts__titles">
+    <p class="caption contacts__caption">КОНТАКТНАЯ ИНФОРМАЦИЯ</p>
+    <h2 class="contacts__title">Cвяжитесь с нами</h2>
+  </div>
+</div>
+
+<section class="contacts">
+  <div class="container">
+    <div class="contacts__inner">
+      <div class="contacts__info">
+        <img
+          src="{% static 'images/map-pointer-blue.svg' %}"
+          alt=""
+          class="contacts__info-img"
+        />
+        <p class="contacts__info-text">
+          Неизвестный край,<br />
+          г. Березногорск,<br />
+          ул. Промышленная, 1, стр. 1
+        </p>
+      </div>
+      <div class="contacts__info">
+        <img
+          src="{% static 'images/mail-pointer-blue.svg' %}"
+          alt=""
+          class="contacts__info-img"
+        />
+        <p class="contacts__info-text">example@mail.ru</p>
+      </div>
+      <div class="contacts__info">
+        <img
+          src="{% static 'images/phone-pointer-blue.svg' %}"
+          alt=""
+          class="contacts__info-img"
+        />
+        <p class="contacts__info-text">+ 7 (999) 999-99-99</p>
+      </div>
+      <div class="contacts__links">
+        <a
+          href="https://t.me/+79999999999"
+          class="contacts__links-telegram"
+        >
+          <img
+            src="{% static 'images/telegram-1.svg' %}"
+            alt="telegram"
+            class="contacts__links-img"
+          />
+        </a>
+        <a
+          href="https://wa.me/79999999999"
+          class="contacts__links-whatsapp"
+        >
+          <img
+            src="{% static 'images/whatsapp-1.svg' %}"
+            alt="Whatsapp"
+            class="contacts__links-img"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="map">
+  <h4 class="map__title">
+    Торговые точки, где Вы можете приобрести нашу продукцию:
+  </h4>
+  <script 
+    type="text/javascript" 
+    charset="utf-8" 
+    async 
+    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A988a334c040e95a8132d30617da2d78543cb727d85f6cffac27992db2bb3ec2e&amp;width=100%25&amp;height=485&amp;lang=ru_RU&amp;scroll=false">
+  </script>
+</section>
+
+{% endblock %}

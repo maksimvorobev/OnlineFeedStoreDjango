@@ -1,0 +1,61 @@
+{% load static %}
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <a href="{% url "main:index" %}" class="logo">
+        <img src="{% static 'images/logo.svg' %}" alt="БиоКормЭксперт" class="logo__img" />
+      </a>
+      <div class="footer__contacts">
+        <div class="footer__contact">
+          <p class="footer__contact-title footer__contact-title-map">Адрес</p>
+          <p class="footer__contact-text">
+            Неизвестный край,<br />
+            г. Березногорск,<br />
+            ул. Промышленная, 1,<br />
+            стр. 1
+          </p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-title footer__contact-title-mail">
+            электронная почта
+          </p>
+          <a href="mailto:example@mail.ru" class="footer__mail-link"
+            >example@mail.ru</a
+          >
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-title footer__contact-title-phone">
+            телефон
+          </p>
+          <a href="tel:+79999999999" class="footer__phone-link"
+            >+ 7 (999) 999-99-99</a
+          >
+          <a href="https://wa.me/79999999999" class="footer__whatsapp-link">
+            <img
+              src="{% static 'images/whatsapp.svg' %}"
+              alt="whatsapp"
+              class="footer__whatsapp-img"
+            />
+          </a>
+          <a href="https://t.me/+79999999999" class="footer__telegram-link">
+            <img
+              src="{% static 'images/telegram.svg' %}"
+              alt="telegram"
+              class="footer__telegram-img"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="footer__policy">
+      <a
+        href="{% static 'assets/docs/politika-obrabotki-personalnih-dannih-1.pdf' %}"
+        title="Политика конфиденциальности"
+        class="footer__policy-link"
+        target="_blank"
+        >Политика конфиденциальности</a
+      >
+    </p>
+    <p class="footer__law">&copy; ООО &laquo;БиоКормЭксперт&raquo;</p>
+  </div>
+</footer>

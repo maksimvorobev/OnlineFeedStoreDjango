@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ title }}{%endblock %} 
+
+
+{% block header %}
+
+{% include 'includes/header.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="history"> 
+    <div class="container">
+      <h1 class="history__title">История компании</h1>
+      <p class="history__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua. Pretium fusce id velit ut tortor 
+        pretium viverra suspendisse potenti. Accumsan sit amet nulla facilisi morbi tempus. 
+        Quisque sagittis purus sit amet volutpat. Quis varius quam quisque id diam vel quam elementum. 
+        Ipsum dolor sit amet consectetur adipiscing. Tellus orci ac auctor augue.
+      </p>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="container">
+      <div class="stats__cards">
+        <div class="stats__card">
+          <img
+            src="{% static "images/stats-product.svg" %}"
+            alt=""
+            class="stats__card-img"
+          />
+          <p class="stats__card-num">10+</p>
+          <p class="stats__card-text">ПРОДУКТОВ</p>
+        </div>
+        <div class="stats__card">
+          <img
+            src="{% static "images/stats-buyer.svg" %}"
+            alt=""
+            class="stats__card-img"
+          />
+          <p class="stats__card-num">100000+</p>
+          <p class="stats__card-text">ДОВОЛЬНЫХ ПОКУПАТЕЛЕЙ</p>
+        </div>
+        <div class="stats__card">
+          <img
+            src="{% static "images/stats-years.svg" %}"
+            alt=""
+            class="stats__card-img"
+          />
+          <p class="stats__card-num">20+</p>
+          <p class="stats__card-text">ЛЕТ НА РЫНКЕ</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__card_main">
+          <p class="caption">О НАС</p>
+          <h2 class="about__title">
+            Dui faucibus in ornare quam viverra!
+          </h2>
+          <p class="about__card-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Pretium fusce id velit ut tortor 
+            pretium viverra suspendisse potenti. Accumsan sit amet nulla facilisi morbi tempus. 
+            Quisque sagittis purus sit amet volutpat. 
+            Quis varius quam quisque id diam vel quam elementum.
+          </p>
+        </div>
+        <div class="about__card_extra">
+          <p class="about__card-text_extra">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Pretium fusce id velit ut tortor 
+            pretium viverra suspendisse potenti. Accumsan sit amet nulla facilisi morbi tempus. 
+            Quisque sagittis purus sit amet volutpat. Quis varius quam quisque id diam vel quam elementum. 
+            Ipsum dolor sit amet consectetur adipiscing. Tellus orci ac auctor augue.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="benefits">
+    <div class="container">
+      <div class="benefits__titles">
+        <p class="caption">ПРЕИМУЩЕСТВА</p>
+        <h2 class="benefits__title">
+          Condimentum mattis pellentesque id nibh tortor id aliquet lectus
+        </h2>
+      </div>
+      <div class="benefits__cards">
+        <div class="benefits__card">
+          <img
+            src="{% static "images/benefits-quality.svg" %}"
+            alt=""
+            class="benefits__card-img"
+          />
+          <p class="benefits__card-title">качество</p>
+          <p class="benefits__card-text">
+            Lorem ipsum dolor sit amet, adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Pretium fusce id velit ut tortor pretium viverra suspendisse potenti.
+          </p>
+        </div>
+        <div class="benefits__card">
+          <img
+            src="{% static "images/benefits-truck.svg" %}"
+            alt=""
+            class="benefits__card-img"
+          />
+          <p class="benefits__card-title">Индивидуальный подход</p>
+          <p class="benefits__card-text">
+            Lorem ipsum dolor sit amet, adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Pretium fusce id velit ut tortor pretium viverra suspendisse potenti.
+          </p>
+        </div>
+        <div class="benefits__card">
+          <img
+            src="{% static "images/benefits-manufacturing.svg" %}"
+            alt=""
+            class="benefits__card-img"
+          />
+          <p class="benefits__card-title">технологии</p>
+          <p class="benefits__card-text">
+            Lorem ipsum dolor sit amet, adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Pretium fusce id velit ut tortor pretium viverra suspendisse potenti.
+          </p>
+        </div>
+        <div class="benefits__card">
+          <img
+            src="{% static "images/benefits-secure.svg" %}"
+            alt=""
+            class="benefits__card-img"
+          />
+          <p class="benefits__card-title">КОНТРОЛЬ</p>
+          <p class="benefits__card-text">
+            Lorem ipsum dolor sit amet, adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Pretium fusce id velit ut tortor pretium viverra suspendisse potenti.
+          </p>
+        </div>
+      </div>
+      <a href="{% url "main:index" %}#product" class="benefits__link"
+        >ПОСМОТРЕТЬ ПРОДУКЦИЮ</a
+      >
+    </div>
+</section>
+
+<section class="targets">
+    <div class="container">
+      <div class="targets__inner">
+        <div class="targets__titles">
+          <p class="caption targets__caption">НАШИ ЦЕЛИ</p>
+          <h2 class="targets__title">
+            Lorem ipsum dolor sit amet, adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </h2>
+        </div>
+        <div class="targets__cards-inner">
+          <div class="targets__cards">
+            <div class="targets__card">
+              <p class="targets__card-num">1</p>
+              <p class="targets__card-text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod.
+              </p>
+            </div>
+            <div class="targets__card">
+              <p class="targets__card-num">2</p>
+              <p class="targets__card-text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod.
+              </p>
+            </div>
+            <div class="targets__card">
+              <p class="targets__card-num">3</p>
+              <p class="targets__card-text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod.
+              </p>
+            </div>
+            <div class="targets__card">
+              <p class="targets__card-num">4</p>
+              <p class="targets__card-text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

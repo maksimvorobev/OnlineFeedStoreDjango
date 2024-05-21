@@ -1,0 +1,124 @@
+{% load static %}
+{% load goods_tags %}
+{% load mptt_tags %}
+{% load carts_tags %}
+
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+
+      <!-- Logo -->
+      <div class="logo">
+        <a href="{% url "main:index" %}" class="logo__link">
+          <img
+            src="{% static 'images/logo.svg' %}"
+            alt="БиоКормЭксперт"
+            class="logo__img"
+          />
+        </a>
+      </div>
+      
+      <!-- Nav -->
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="menu__list-item">
+            <a href="{% url "main:index" %}" class="menu__list-link">ГЛАВНАЯ</a>
+          </li>
+          <li class="menu__list-item">
+            <a href="{% url "main:about" %}" class="menu__list-link">О КОМПАНИИ</a>
+          </li>
+          <li class="menu__list-item menu__list-item_drop" >
+            <a href="{% url "catalog:index" %}" class="menu__list-link menu__list-item-drop-link">КОМБИКОРМА</a>
+            <ul class="menu__sublist">
+              
+              {% tag_categories_kombi as categories %}
+              {% recursetree categories %}
+              <li class="menu__list-item menu__sublist-item">
+                <a href="{% url "catalog:index" node.slug %}" class="menu__list-link menu__list-link-kombi"
+                  >{{ node.name }}</a
+                >
+              </li>
+              {% endrecursetree %}
+
+            </ul>
+          </li>
+
+          <li class="menu__list-item menu__list-item_drop">
+            <a href="{% url "catalog:index" "bmvd" %}" class="menu__list-link menu__list-item-drop-link">БМВД</a>
+            <ul class="menu__sublist">
+
+              {% tag_product_bmvd as bmvd %}
+              {% for product in bmvd %}
+              <li class="menu__list-item menu__sublist-item menu__sublist-item_nowrap">
+                <a href="{% url "catalog:product" product.slug %}" class="menu__list-link"
+                  >{{ product.name }}</a
+                >
+              </li>
+              {% endfor %}
+              
+            </ul>
+          </li>
+
+
+          <li class="menu__list-item">
+            <a href="{% url "main:contacts" %}" class="menu__list-link">КОНТАКТЫ</a>
+          </li>
+
+          {% if not user.is_authenticated %}
+            <li class="menu__list-item">
+              <a href="{% url "user:login" %}" class="menu__list-link"
+                >Войти</a
+              >
+            </li>
+          {% else %}
+            <li class="menu__list-item menu__list-item_drop">
+              <a href="{% url "user:profile" %}" class="menu__list-link menu__list-item-drop-link">ПРОФИЛЬ</a>
+              <ul class="menu__sublist">
+                <li class="menu__list-item menu__sublist-item">
+                  <a href="{% url "user:profile" %}" class="menu__list-link"
+                    >Личный кабинет</a
+                  >
+                </li>
+                <li class="menu__list-item menu__sublist-item">
+                  <a href="{% url "user:users_cart" %}" class="menu__list-link"
+                    >Корзина</a
+                  >
+                </li>
+                <li class="menu__list-item menu__sublist-item">
+                  <a href="{% url "user:logout" %}" class="menu__list-link"
+                    >Выйти</a
+                  >
+                </li>
+      
+                {% if user.is_admin or user.is_staff %}
+                <li class="menu__list-item menu__sublist-item">
+                  <a href="{% url "admin:index" %}" class="menu__list-link"
+                    >Админ</a
+                  >
+                </li>
+                {% endif %}
+              </ul>
+            </li>
+          {% endif %}
+
+        </ul>
+      </nav>
+
+      <!-- Info -->
+      <div class="header__info">
+        <div type="button" class="header__feedback-btn popup__open" data-feedback-url="{% url "main:feedback" %}">
+          <span>Обратная</span>
+          <span>связь</span>
+        </div>
+      </div>
+
+      <!-- Hamburger menu button -->
+      <button class="menu__btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </div>
+</header>
