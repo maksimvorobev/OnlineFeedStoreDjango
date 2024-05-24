@@ -1,7 +1,7 @@
 asgiref==3.7.2
 asttokens==2.4.1
 decorator==5.1.1
-Django==4.2.13
+Django==5.0
 django-mptt==0.16.0
 django-mptt-admin==2.6.2
 executing==2.0.1
