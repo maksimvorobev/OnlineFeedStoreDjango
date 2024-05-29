@@ -49,7 +49,7 @@ class Products(models.Model):
         upload_to="goods_images",
         blank=True,
         null=True,
-        verbose_name="Изображение для католога",
+        verbose_name="Изображение для каталога",
     )
     image_big = models.ImageField(
         upload_to="goods_images",
