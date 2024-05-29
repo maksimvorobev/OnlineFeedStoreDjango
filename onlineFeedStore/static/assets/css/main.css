@@ -738,11 +738,10 @@ h5 {
 /* top styles start */
 
 .top {
-  padding: 120px 0;
+  padding: 90px 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  min-height: 100vh;
   position: relative;
 }
 
@@ -763,13 +762,13 @@ h5 {
   margin: 0 auto;
   max-width: 760px;
   text-align: center;
-  z-index: 2;
+  z-index: 3;
 }
 
 .top__title {
   padding-top: 27px;
   font-weight: 400;
-  font-size: 42px;
+  font-size: 44px;
   line-height: 64px;
   color: #ffffff;
   margin-bottom: 25px;
@@ -790,7 +789,7 @@ h5 {
 
 .top__text {
   font-weight: 400;
-  font-size: 19px;
+  font-size: 22px;
   line-height: 38px;
   color: #fff4f4;
   margin-bottom: 45px;
@@ -799,7 +798,7 @@ h5 {
 .top__link {
   display: inline-block;
   background: #f3d24f url(/static/images/arrow.svg) 88% 50% no-repeat;
-  padding: 28px 73px 26px 34px;
+  padding: 20px 73px 18px 34px;
   font-weight: 700;
   font-size: 18px;
   color: #000000;
@@ -817,6 +816,11 @@ h5 {
 /* top styles end*/
 
 /* products styles start */
+
+.products {
+  padding: 35px 0 0 0;
+  text-align: center;
+}
 
 .products__title {
   padding: 50px 0;
@@ -865,7 +869,7 @@ h5 {
 
 .advantages {
   background: linear-gradient(to right, #fce38d 60%, #f8f9f9 60% 40%);
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 .advantages__inner {
@@ -887,7 +891,7 @@ h5 {
 
 .advantages__card-title {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 28px;
   text-transform: uppercase;
   color: #000000;
@@ -896,7 +900,7 @@ h5 {
 
 .advantages__card-text {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 19px;
   line-height: 24px;
   color: #000000;
 }
@@ -915,7 +919,7 @@ h5 {
 
 .advantages__description-text {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 34px;
 }
 
@@ -931,8 +935,8 @@ h5 {
 .map__title {
   padding: 0 10px;
   font-weight: 400;
-  font-size: 42px;
-  line-height: 64px;
+  font-size: 38px;
+  line-height: 54px;
   margin-bottom: 40px;
 }
 
@@ -954,7 +958,7 @@ h5 {
 
 .history__text {
   font-weight: 400;
-  font-size: 19px;
+  font-size: 22px;
   line-height: 38px;
   color: #000000;
 }
@@ -1015,13 +1019,13 @@ h5 {
 .about__title {
   font-weight: 400;
   font-size: 42px;
-  line-height: 64px;
+  line-height: 58px;
   margin-bottom: 10px;
 }
 
 .about__card-text {
   font-weight: 400;
-  font-size: 19px;
+  font-size: 22px;
   line-height: 38px;
   color: #000000;
 }
@@ -1036,7 +1040,7 @@ h5 {
 
 .about__card-text_extra {
   font-weight: 400;
-  font-size: 19px;
+  font-size: 22px;
   line-height: 38px;
   color: #000000;
 }
@@ -1048,21 +1052,21 @@ h5 {
 
 .benefits__titles {
   max-width: 830px;
-  margin: 0 auto 77px;
+  margin: 0 auto 57px;
 }
 
 .benefits__title {
   display: inline-block;
   font-weight: 400;
   font-size: 42px;
-  line-height: 64px;
+  line-height: 56px;
 }
 
 .benefits__cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 19px;
-  margin-bottom: 90px;
+  column-gap: 25px;
+  margin-bottom: 50px;
 }
 
 .benefits__card {
@@ -1080,14 +1084,14 @@ h5 {
   text-transform: uppercase;
   font-family: "Roboto Slab", serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 24px;
   margin-bottom: 20px;
 }
 
 .benefits__card-text {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 19px;
   line-height: 24px;
   color: #000000;
 }
@@ -1095,7 +1099,7 @@ h5 {
 .benefits__link {
   display: inline-block;
   background: #f3d24f url(/static/images/arrow.svg) 90% 50% no-repeat;
-  padding: 28px 73px 26px 34px;
+  padding: 22px 73px 20px 34px;
   font-weight: 700;
   font-size: 18px;
   color: #000000;
@@ -1136,7 +1140,7 @@ h5 {
   display: inline-block;
   font-weight: 400;
   font-size: 42px;
-  line-height: 64px;
+  line-height: 56px;
   color: #ffffff;
 }
 
@@ -1174,7 +1178,7 @@ h5 {
 
 .targets__card-text {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
 }
 
@@ -1244,7 +1248,7 @@ h5 {
 /* catalog styles start */
 
 .catalog {
-  padding: 45px 0 0 0;
+  padding: 20px 0 0 0;
   text-align: center;
 }
 
@@ -1258,7 +1262,7 @@ h5 {
   font-weight: 400;
   font-size: 42px;
   line-height: 64px;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
   position: relative;
 }
 
@@ -1497,9 +1501,9 @@ h5 {
 .catalog__description {
   display: inline-block;
   font-weight: 400;
-  font-size: 19px;
+  font-size: 21px;
   line-height: 38px;
-  max-width: 730px;
+  max-width: 860px;
   position: relative;
   padding-bottom: 50px;
 }
@@ -1523,7 +1527,7 @@ h5 {
 
 .item {
   background-color: #170f49;
-  padding: 50px 0;
+  padding: 35px 0;
 }
 
 .item__inner {
@@ -1578,8 +1582,8 @@ h5 {
   border-radius: 5px;
   color: #000000;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 18px;
+  line-height: 19px;
   margin-bottom: 35px;
 }
 
@@ -1655,7 +1659,7 @@ h5 {
 }
 
 .item-info {
-  padding: 90px 0 200px;
+  padding: 50px 0 100px;
   text-align: center;
 }
 
@@ -1663,7 +1667,7 @@ h5 {
   display: flex;
   justify-content: center;
   max-width: 780px;
-  margin: 80px auto 0;
+  margin: 40px auto 0;
   gap: 25px;
 }
 
@@ -2888,7 +2892,15 @@ h5 {
   }
 
   .catalog__description {
+    font-size: 18px;
     line-height: 30px;
+    padding-bottom: 40px;
+  }
+
+  .catalog__description::after {
+    width: 25px;
+    height: 25px;
+    margin-left: -12px;
   }
 
   .breadcrumb__list-item {
@@ -2922,12 +2934,26 @@ h5 {
     width: 80px;
   }
 
+  .catalog__prod-card {
+    padding: 15px 20px 20px;
+  }
+
+  .catalog__prod-card-title {
+    margin-bottom: 15px;
+  }
+
   .catalog__prod-card-img {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  .catalog__prod-card-description {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 10px;
   }
 
   .advantages {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   .advantages__inner {
@@ -2935,17 +2961,27 @@ h5 {
   }
 
   .advantages__card-title {
+    font-size: 20px;
+    line-height: 24px;
     margin-bottom: 8px;
   }
 
   .advantages__description-title {
     font-size: 32px;
-    line-height: 44px;
-    margin-bottom: 14px;
+    line-height: 36px;
+    margin-bottom: 10px;
   }
 
   .advantages__description-text {
+    font-weight: 400;
+    font-size: 18px;
     line-height: 28px;
+  }
+
+  .advantages__card-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
   }
 
   .feedback-form {
@@ -2957,6 +2993,11 @@ h5 {
     font-size: 32px;
     line-height: 34px;
     margin-bottom: 10px;
+  }
+
+  .feedback-form__description {
+    line-height: 24px;
+    margin-bottom: 28px;
   }
 
   .form__btn {
@@ -3193,8 +3234,68 @@ h5 {
     gap: 5px;
   }
 
+  .header__feedback-btn {
+    height: 44px;
+    padding: 0px 12.5px;
+    line-height: 44px;
+  }
+
   .menu__list {
     padding: 120px 50px 0;
+  }
+
+  .top__title {
+    padding-top: 10px;
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .top__text {
+    line-height: 26px;
+    margin-bottom: 25px;
+  }
+
+  .top__link {
+    padding: 16px 65px 14px 20px;
+    font-size: 15px;
+  }
+
+  .products {
+    padding: 25px 0 0 0;
+    text-align: center;
+  }
+
+  .products__title {
+    padding: 26px 0;
+    font-size: 26px;
+    line-height: 38px;
+    margin-bottom: 25px;
+  }
+
+  .catalog__title {
+    padding-bottom: 6px;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 15px;
+  }
+
+  .catalog__prod-card-title {
+    margin-bottom: 10px;
+  }
+
+  .catalog__prod-cards {
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .catalog__description {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .catalog__description::after {
+    width: 20px;
+    height: 20px;
   }
 
   .breadcrumb__list-item {
@@ -3213,12 +3314,32 @@ h5 {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
   }
 
   .advantages__description-title,
   .advantages__description-text {
     color: #000000;
+  }
+
+  .advantages__description-title {
+    font-size: 30px;
+    line-height: 34px;
+    margin-bottom: 8px;
+  }
+
+  .advantages__description-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .advantages__card {
+    max-width: 396px;
+  }
+
+  .advantages__card-img {
+    width: 60px;
   }
 
   .stats__cards {
@@ -3285,6 +3406,23 @@ h5 {
     padding: 20px;
   }
 
+  .footer__contacts {
+    row-gap: 30px;
+  }
+
+  .footer__contact-text {
+    font-size: 16px;
+  }
+
+  .footer__mail-link {
+    font-size: 18px;
+  }
+
+  .footer__phone-link {
+    font-size: 18px;
+    padding-bottom: 17px;
+  }
+
 }
 
 @media (max-width: 492px) {
@@ -3320,6 +3458,17 @@ h5 {
 
   .feedback-form {
     padding: 35px 10px;
+  }
+
+  .feedback-form__description {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 18px;
+  }
+
+  .top__title {
+    font-size: 23px;
+    line-height: 34px;
   }
 
   .form__label {
