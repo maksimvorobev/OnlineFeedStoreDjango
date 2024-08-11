@@ -8,19 +8,21 @@
       {{ product.name }}
     </h2>
     <div class="catalod__prod-card-info">
-      {% if product.image_small %}
-      <img
-        src="{{ product.image_small.url }}"
-        alt="{{ product.name }}"
+      <div class="catalog__prod-card-img-inner">
+        {% if product.image_small %}
+        <img
+          src="{{ product.image_small.url }}"
+          alt="{{ product.name }}"
+          class="catalog__prod-card-img"
+        />
+        {% else %}
+        <img
+        src="{% static "images/not-found-image.svg" %}"
+        alt="..."
         class="catalog__prod-card-img"
-      />
-      {% else %}
-      <img
-      src="{% static "images/not-found-image.svg" %}"
-      alt="..."
-      class="catalog__prod-card-img"
-      />
-      {% endif %}
+        />
+        {% endif %}
+      </div>
       
       {% if product.description %}
       <p class="catalog__prod-card-description">

@@ -1454,6 +1454,11 @@ h5 {
   margin-bottom: 20px;
 }
 
+.catalog__prod-card-img-inner {
+  width: 180px;
+  margin: 0 auto;
+}
+
 .catalog__prod-card-img {
   object-fit: cover;
   margin-bottom: 30px;
@@ -2963,6 +2968,10 @@ h5 {
     margin-bottom: 15px;
   }
 
+  .catalog__prod-card-img-inner {
+    width: 170px;
+  }
+
   .catalog__prod-card-img {
     margin-bottom: 10px;
   }
@@ -3302,6 +3311,10 @@ h5 {
 
   .catalog__prod-card-title {
     margin-bottom: 10px;
+  }
+
+  .catalog__prod-card-img-inner {
+    width: 140px;
   }
 
   .catalog__prod-cards {

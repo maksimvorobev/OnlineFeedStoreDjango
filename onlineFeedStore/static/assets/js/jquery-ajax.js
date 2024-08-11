@@ -256,7 +256,7 @@ $(document).ready(function () {
             if (submenu.hasClass('menu__sublist_open')) {
                 submenu.slideUp().removeClass('menu__sublist_open');
             } else {
-                $('.menu__sublist--open').slideUp().removeClass('menu__sublist_open');
+                $('.menu__sublist_open').slideUp().removeClass('menu__sublist_open');
                 submenu.slideDown().addClass('menu__sublist_open');
             }
         }
