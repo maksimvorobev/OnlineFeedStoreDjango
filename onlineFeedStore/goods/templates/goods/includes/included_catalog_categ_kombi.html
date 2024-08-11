@@ -1,0 +1,52 @@
+{% load static %}
+{% load mptt_tags %}
+
+<div class="catalog__categ-cards-inner">
+  <div class="catalog__categ-cards">
+    {% recursetree categories %}
+    {% if category and category.name == node.name %}
+    <div class="catalog__categ-card catalog__categ-card_active">
+      <div class="catalog__categ-card-textbox">
+        <h3 class="catalog__categ-card-title">{{node.name}}</h3>
+        <a href="{% url "catalog:index" node.slug %}"
+           class="catalog__categ-card-link catalog__categ-card-link_active">Подробнее</a>
+      </div>
+      {% if node.image %}
+      <img
+        src="{{ node.image.url }}"
+        alt="{{ node.name }}"
+        class="catalog__categ-card-img"
+      />
+      {% else %}
+      <img
+      src="{% static "images/not-found-image.svg" %}"
+      alt="{{ node.name }}"
+      class="catalog__categ-card-img"
+      />
+      {% endif %}
+    </div>
+    {% else %}
+    <div class="catalog__categ-card">
+      <div class="catalog__categ-card-textbox">
+        <h3 class="catalog__categ-card-title">{{node.name}}</h3>
+        <a href="{% url "catalog:index" node.slug %}" class="catalog__categ-card-link">Подробнее</a>
+      </div>
+      {% if node.image %}
+      <img
+        src="{{ node.image.url }}"
+        alt="{{ node.name }}"
+        class="catalog__categ-card-img"
+      />
+      {% else %}
+      <img
+      src="{% static "images/not-found-image.svg" %}"
+      alt="{{ node.name }}"
+      class="catalog__categ-card-img"
+      />
+      {% endif %}
+    </div>
+    {% endif %}
+    {% endrecursetree %}
+  </div>
+
+</div>

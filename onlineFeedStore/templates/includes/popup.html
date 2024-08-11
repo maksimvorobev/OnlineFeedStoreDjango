@@ -6,6 +6,8 @@
       Если Вы хотите оставить заявку, задать вопрос или связаться с нами -
       заполните форму.
     </p>
+
+
     <form action="{% url "main:feedback" %}" method="post"  class="form" id="feedback-form">
       {% csrf_token %}
       <div class="forms__group">
@@ -87,6 +89,8 @@
         <button class="form__btn feedback-btn" type="submit">ОТПРАВИТЬ СООБЩЕНИЕ</button>
       </div>
     </form>
+
+    
     <div class="popup__close">&#10006;</div>
   </div>
 </div>

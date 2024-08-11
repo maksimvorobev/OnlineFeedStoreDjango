@@ -64,8 +64,10 @@ def product(request, product_slug):
 
     if product.category.slug == "bmvd":
         bmvd_product = True
+        parent_categories = False
     else:
         bmvd_product = False
+        parent_categories = product.category.get_ancestors(include_self=True)
 
     if bmvd_product:
         title = f"БМВД {product.name} | БиоКормЭксперт"
@@ -118,6 +120,7 @@ def product(request, product_slug):
         "composition_list": composition_list,
         "feeding_standards_list": feeding_standards_list,
         "recommendations_list": recommendations_list,
+        "parent_categories": parent_categories,
     }
 
     return render(request, "goods/product.html", context)

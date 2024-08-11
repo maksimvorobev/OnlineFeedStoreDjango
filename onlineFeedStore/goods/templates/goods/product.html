@@ -18,7 +18,22 @@
 <section class="item">
   <div class="container">
     <div class="item__inner">
-      <a href="{{ request.META.HTTP_REFERER }}" class="item__back-link">Назад в каталог</a>
+      {% if bmvd_product %}
+        <ul class="item__breadcrumb-list">
+          <li class="item__breadcrumb-list-item"><a href="{% url "catalog:index" product.category.slug %}" class="item__breadcrumb-list-link">БМВД</a></li>
+          <li class="item__breadcrumb-list-item"><a href="{% url "catalog:product" product.slug %}" class="item__breadcrumb-list-link">{{ product.name }}</a></li>
+        </ul>
+      {% else %}
+        <ul class="item__breadcrumb-list">
+          <li class="item__breadcrumb-list-item"><a href="{% url "catalog:index" %}" class="item__breadcrumb-list-link">Комбикорма</a></li>
+          {% if parent_categories %}
+          {% for category in parent_categories %}
+              <li class="item__breadcrumb-list-item"><a href="{% url "catalog:index" category.slug %}" class="item__breadcrumb-list-link">{{ category.name }}</a></li>
+          {% endfor %}
+          {% endif %}
+          <li class="item__breadcrumb-list-item"><a href="{% url "catalog:product" product.slug %}" class="item__breadcrumb-list-link">{{ product.name }}</a></li>
+        </ul>
+      {% endif %}
       <h1 class="item__title">{{ product.name }}</h1>
       <div class="item__desc">
         <div class="item__img-inner">
@@ -74,6 +89,7 @@
               </p>
             </div>
             {% endif %}
+            {% if product.price %}
             <div class="item__desc-property">
               <p
                 class="item__desc-property-text item__desc-property-text_price"
@@ -81,6 +97,8 @@
                 <b>Цена, за кг:</b> {{ product.price }} <b>&#x20bd;</b>
               </p>
             </div>
+            {% endif %}
+            {% if product.quantity %}
             <div class="item__desc-property">
               <p
                 class="item__desc-property-text item__desc-property-text_quantity"
@@ -88,6 +106,7 @@
                 <b>Количество:</b> {{ product.quantity }}
               </p>
             </div>
+            {% endif %}
           </div>
 
           <a class="item__desc-cart-btn add-to-cart" href="{% url "cart:cart_add" %}" data-product-id="{{ product.id }}">

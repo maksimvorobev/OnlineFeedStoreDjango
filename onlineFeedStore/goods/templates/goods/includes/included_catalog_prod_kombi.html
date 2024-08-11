@@ -7,29 +7,28 @@
     <h2 class="catalog__prod-card-title">
       {{ product.name }}
     </h2>
-    <div class="catalod__prod-card-info">
-      {% if product.image_small %}
-      <img
-        src="{{ product.image_small.url }}"
-        alt="{{ product.name }}"
-        class="catalog__prod-card-img"
-      />
-      {% else %}
-      <img
-      src="{% static "images/not-found-image.svg" %}"
-      alt="..."
+    {% if product.image_small %}
+    <img
+      src="{{ product.image_small.url }}"
+      alt="{{ product.name }}"
       class="catalog__prod-card-img"
-      />
-      {% endif %}
-      
-      {% if product.description %}
-      <p class="catalog__prod-card-description">
-        {{ product.description }}
-      </p>
-      {% endif %}
-    </div>
+    />
+    {% else %}
+    <img
+    src="{% static "images/not-found-image.svg" %}"
+    alt="..."
+    class="catalog__prod-card-img"
+    />
+    {% endif %}
+
+    {% if product.description %}
+    <p class="catalog__prod-card-description">
+      {{ product.description }}
+    </p>
+    {% endif %}
+
     <a href="{% url "catalog:product" product.slug %}" class="catalog__prod-card-link"
-      >Подробнее</a
+        >Подробнее</a
     >
   </div>
   {% endfor  %}

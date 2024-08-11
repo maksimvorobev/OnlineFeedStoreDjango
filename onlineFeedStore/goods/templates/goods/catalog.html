@@ -22,11 +22,34 @@
 
       {% if bmvd %}
 
+      <h2 class="catalog__title">БМВД</h2>
+
+      <div class="catalog__info">
+        <ul class="catalog__breadcrumb-list">
+          <li class="catalog__breadcrumb-list-item"><a href="{% url "catalog:index" category.slug %}" class="catalog__breadcrumb-list-link">Каталог</a></li>
+        </ul>
+      </div>
+
       {% include "goods/includes/included_catalog_bmvd.html" %}
 
       {% else %}
 
-      {% include "goods/includes/included_catalog_kombi.html" %}
+      <h2 class="catalog__title">Комбикорма</h2>
+
+      <div class="catalog__info">
+        <ul class="catalog__breadcrumb-list">
+          <li class="catalog__breadcrumb-list-item"><a href="{% url "catalog:index" %}" class="catalog__breadcrumb-list-link">Каталог</a></li>
+          {% if parent_categories %}
+          {% for category in parent_categories %}
+              <li class="catalog__breadcrumb-list-item"><a href="{% url "catalog:index" category.slug %}" class="catalog__breadcrumb-list-link">{{ category.name }}</a></li>
+          {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+
+      {% include "goods/includes/included_catalog_categ_kombi.html" %}
+
+      {% include "goods/includes/included_catalog_prod_kombi.html" %}
       
       {% endif %}
 
